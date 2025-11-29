@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -345,39 +344,39 @@ namespace ScratchNet
                  */
                 foreach (Expression e in _sprite.Expressions)
                 {
-                    Point p;
+                    Position p;
                     if (_sprite.Positions.ContainsKey(e))
                         p = _sprite.Positions[e];
                     else
-                        p = new Point(0, 0);
+                        p = new Position(0, 0);
                     CreateNewExpression(e, p);
                 }
                 foreach (BlockStatement e in _sprite.BlockStatements)
                 {
-                    Point p;
+                    Position p;
                     if (_sprite.Positions.ContainsKey(e))
                         p = _sprite.Positions[e];
                     else
-                        p = new Point(0, 0);
+                        p = new Position(0, 0);
                     CreateStatementBlock(e, p);
                 }
                 foreach (Function e in _sprite.Functions)
                 {
-                    Point p;
+                    Position p;
                     if (_sprite.Positions.ContainsKey(e))
                         p = _sprite.Positions[e];
                     else
-                        p = new Point(0, 0);
+                        p = new Position(0, 0);
                     CreateNewFunction(e, p);
                     AddFunctionCallStatement(e);
                 }
                 foreach (EventHandler e in _sprite.Handlers)
                 {
-                    Point p;
+                    Position p;
                     if (_sprite.Positions.ContainsKey(e))
                         p = _sprite.Positions[e];
                     else
-                        p = new Point(0, 0);
+                        p = new Position(0, 0);
                     CreateNewFunction(e, p);
                 }
 
@@ -535,7 +534,7 @@ namespace ScratchNet
                 }
             }
             func.Format = format;
-            CreateNewFunction(func, new Point(5, 5));
+            CreateNewFunction(func, new Position(5, 5));
             /*
             if (func is EventHandler)
             {
@@ -544,7 +543,7 @@ namespace ScratchNet
             else
                 _sprite.Functions.Add(func);
                 */
-            _sprite.Positions.Add(func, new Point(5, 5));
+            _sprite.Positions.Add(func, new Position(5, 5));
             _sprite.Functions.Add(func);
             AddFunctionCallStatement(func);
             //GenerateStepList(item);
@@ -868,12 +867,13 @@ namespace ScratchNet
             }
             else if (createNewControl)
             {
+                var p = new Position(pt.X, pt.Y);
                 BlockStatement bstate = new BlockStatement();
 
                 bstate.Body.Add(ex);
-                CreateStatementBlock(bstate, pt);
+                CreateStatementBlock(bstate, p);
                 _sprite.BlockStatements.Add(bstate);
-                _sprite.Positions.Add(bstate, pt);
+                _sprite.Positions.Add(bstate, p);
                 return true;
             }
             
@@ -925,14 +925,15 @@ namespace ScratchNet
             //}
             if (createNewControl)
             {
-                CreateNewExpression(ex, pt);
+                var p = new Position(pt.X, pt.Y);
+                CreateNewExpression(ex, p);
                 _sprite.Expressions.Add(ex);
-                _sprite.Positions.Add(ex, pt);
+                _sprite.Positions.Add(ex, p);
                 return true;
             }
             return false;
         }
-        private void CreateNewExpression(Expression ex, Point pt)
+        private void CreateNewExpression(Expression ex, Position pt)
         {
             ExpressionControl ectrl = new ExpressionControl();
             ectrl.Expression = ex;
@@ -941,7 +942,7 @@ namespace ScratchNet
             Canvas.SetLeft(ectrl, pt.X);
             Canvas.SetTop(ectrl, pt.Y);
         }
-        private void CreateStatementBlock(BlockStatement bstate, Point pt)
+        private void CreateStatementBlock(BlockStatement bstate, Position pt)
         {
             BlockStatementControl bstCtrl = new BlockStatementControl();
             bstCtrl.BlockStatement = bstate;
@@ -949,7 +950,7 @@ namespace ScratchNet
             Canvas.SetLeft(bstCtrl, pt.X);
             Canvas.SetTop(bstCtrl, pt.Y);
         }
-        private void CreateNewFunction(Function fc, Point pt)
+        private void CreateNewFunction(Function fc, Position pt)
         {
             FunctionControl ectrl = new FunctionControl();
             ectrl.Function = fc;
@@ -977,14 +978,14 @@ namespace ScratchNet
                     return false;
                 }
             }
-            CreateNewFunction(fc, pt);
+            CreateNewFunction(fc, new Position(pt.X, pt.Y));
             if (fc is EventHandler)
             {
                 _sprite.Handlers.Add(fc as EventHandler);
             }
             else
                 _sprite.Functions.Add(fc);
-            _sprite.Positions.Add(fc, pt);
+            _sprite.Positions.Add(fc, new Position(pt.X,pt.Y));
             return true;
         }
         bool CallCommandExist(string func)
@@ -1810,7 +1811,7 @@ namespace ScratchNet
         {
 
         }
-        public void Paste(Point position)
+        public void Paste(Position position)
         {
             if(lastCopyObject is Statement)
             {
@@ -1836,7 +1837,7 @@ namespace ScratchNet
 
         private void OnPaste(object sender, RoutedEventArgs e)
         {
-            Paste(lastPopupMenuPosition);
+            Paste(new Position(lastPopupMenuPosition.X, lastPopupMenuPosition.Y));
         }
 
         private void OnDelete(object sender, RoutedEventArgs e)

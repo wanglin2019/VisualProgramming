@@ -12,14 +12,14 @@ namespace ScratchNet
     {
         public Script()
         {
-            Positions = new Dictionary<object, System.Windows.Point>();
+            Positions = new Dictionary<object, Position>();
             Variables = new List<Variable>();
             Functions = new List<Function>();
             Handlers = new List<ScratchNet.EventHandler>();
             Expressions = new List<Expression>();
             BlockStatements = new List<BlockStatement>();
         }
-        public Dictionary<object, System.Windows.Point> Positions
+        public Dictionary<object, Position> Positions
         {
             get;
             set;

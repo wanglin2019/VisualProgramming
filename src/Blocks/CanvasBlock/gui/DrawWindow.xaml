@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScratchNet"
-        xmlns:loc="clr-namespace:ScratchNet.Properties;assembly=Canvas"
+        xmlns:loc="clr-namespace:ScratchNet.Properties;assembly=CanvasBlock"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" ShowInTaskbar="True"
         Title="{x:Static loc:Language.WindowTitle}" Height="450" Width="800">
     <Grid>

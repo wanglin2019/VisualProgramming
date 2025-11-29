@@ -103,7 +103,7 @@ namespace ScratchNet
         {
             Images = new ResourcesList();
             Sounds = new ResourcesList();
-            Positions = new Dictionary<object, Point>();
+            Positions = new Dictionary<object, Position>();
             Variables = new List<Variable>();
             Functions = new List<Function>();
             Handlers = new List<EventHandler>();
@@ -113,7 +113,7 @@ namespace ScratchNet
             Size=100;
             Visible = true;
         }
-        public Dictionary<object, Point> Positions
+        public Dictionary<object, Position> Positions
         {
             get;
             set;

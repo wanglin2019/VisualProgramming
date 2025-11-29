@@ -928,7 +928,7 @@ namespace ScratchNet
 
         private void OnPaste(object sender, RoutedEventArgs e)
         {
-            Editor.Paste(new Point());
+            Editor.Paste(new Position());
         }
 
         private void OnLanguage(object sender, RoutedEventArgs e)

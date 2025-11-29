@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="ToastNotifications" Version="2.5.1" />
+    <PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Blocks\ForBuildingBlock\ForBuildingBlock.csproj" />
+    <ProjectReference Include="..\..\src\ScratchEditor\ScriptEditor.csproj" />
   </ItemGroup>
 
 </Project>

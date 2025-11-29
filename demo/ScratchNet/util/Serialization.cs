@@ -133,7 +133,7 @@ namespace ScratchNet
             }
             return node;
         }
-        private static XmlNode CreateFunctionNode(Function e, XmlDocument xmlDoc, Nullable<Point> point=null)
+        private static XmlNode CreateFunctionNode(Function e, XmlDocument xmlDoc, Nullable<Position> point=null)
         {
             XmlNode exNode = xmlDoc.CreateElement("Function");
             exNode.Attributes.Append(CreateAttribute(xmlDoc, "type", GetTypeName(e.GetType())));
@@ -193,7 +193,7 @@ namespace ScratchNet
             }
             return exNode;
         }
-        private static XmlNode CreateBlockStatementNode(BlockStatement e, XmlDocument xmlDoc, Nullable<Point> point=null)
+        private static XmlNode CreateBlockStatementNode(BlockStatement e, XmlDocument xmlDoc, Nullable<Position> point=null)
         {
             XmlNode exNode = CreateNode(xmlDoc, "BlockStatement", "type", GetTypeName(e.GetType()));
             if (point != null)
@@ -267,7 +267,7 @@ namespace ScratchNet
             
             return exNode;
         }
-        private static XmlNode CreateExpressionNode(Expression e, XmlDocument xmlDoc,Nullable<Point> point=null)
+        private static XmlNode CreateExpressionNode(Expression e, XmlDocument xmlDoc,Nullable<Position> point=null)
         {
             XmlNode exNode = xmlDoc.CreateElement("Expression");
             if (e != null)
@@ -454,9 +454,9 @@ namespace ScratchNet
                     {
                         Expression exp=LoadExpression(eNode);
                         sp.Expressions.Add(exp);
-                        Point pt = new Point();
+                        Position pt = new Position();
                         if (eNode.Attributes["x"] != null && eNode.Attributes["y"] != null)
-                            pt = new Point(double.Parse(eNode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(eNode.Attributes["x"].Value),
                                 double.Parse(eNode.Attributes["y"].Value));
                         sp.Positions.Add(exp, pt);
                     }
@@ -466,10 +466,10 @@ namespace ScratchNet
                     foreach (XmlNode bnode in node.ChildNodes)
                     {
                         BlockStatement bs = LoadBlockStatement(bnode);
-                        sp.BlockStatements.Add(bs); 
-                        Point pt = new Point();
+                        sp.BlockStatements.Add(bs);
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(bs, pt);
                     }
@@ -480,9 +480,9 @@ namespace ScratchNet
                     {
                         Function func = LoadFunction(bnode);
                         sp.Handlers.Add(func as EventHandler);
-                        Point pt = new Point();
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(func, pt);
                     }
@@ -493,9 +493,9 @@ namespace ScratchNet
                     {
                         Function func = LoadFunction(bnode);
                         sp.Functions.Add(func);
-                        Point pt = new Point();
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(func, pt);
                     }
