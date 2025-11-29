@@ -137,6 +137,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Blocks\DataBlock\DataBlock.csproj">
+      <Project>{3e0b8484-226f-4ad0-8023-7d8a0fec8c9d}</Project>
+      <Name>DataBlock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>

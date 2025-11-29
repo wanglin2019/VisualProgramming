@@ -57,7 +57,7 @@ namespace ScratchNet
             libs.Add(new LibraryItem() { Library = new CanvasCollection(), IsStoreLibrary = false, Image = LoadSource("/images/PAINT.png") });
             libs.Add(new LibraryItem() { Library = new SpeechLibrary(), IsStoreLibrary = false, Image = LoadSource("/images/Microphone.png") });
             libs.Add(new LibraryItem() { Library = new CollectionLibary(), IsStoreLibrary = false, Image = LoadSource("/images/list.png") });
-            libs.Add(new LibraryItem() { Library = new DataStructureLibrary(), IsStoreLibrary = false, Image = LoadSource("/images/collection.png") });
+            //libs.Add(new LibraryItem() { Library = new DataLibrary(), IsStoreLibrary = false, Image = LoadSource("/images/collection.png") });
             libs.Add(new LibraryItem() { Library = new ThreadCollection(), IsStoreLibrary = false, Image = LoadSource("/images/th.png") });
 
             Editor.IsEnabled = false;

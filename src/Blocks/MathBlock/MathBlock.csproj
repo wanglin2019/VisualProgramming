@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0FF7DF5-1936-4CC7-9E49-E2AF197EC70F}</ProjectGuid>
+    <ProjectGuid>{3256095C-A9EC-4151-BA37-6F004B7AEC87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScratchNet</RootNamespace>
@@ -64,7 +64,7 @@
     <Compile Include="TriangleFunctionExpression.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
+    <ProjectReference Include="..\..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
     </ProjectReference>

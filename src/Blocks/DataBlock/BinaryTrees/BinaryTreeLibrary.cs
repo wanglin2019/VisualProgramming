@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ScratchNet
 {
-    public class DataStructureLibrary : Library
+    public class BinaryTreeLibrary : Library
     {
-        public DataStructureLibrary()
+        public BinaryTreeLibrary()
         {
             Name = "Data Structure";
             Title = Language.Title;

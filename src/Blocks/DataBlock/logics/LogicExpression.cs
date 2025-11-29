@@ -14,12 +14,12 @@ namespace ScratchNet
         public Expression Left { get; set; }
         public Expression Right { get; set; }
         public Operator Operator { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "boolean"; }
         }
 
-        public Completion Execute(ExecutionEnvironment enviroment)
+        public  Completion Execute(ExecutionEnvironment enviroment)
         {
             if (Left == null || Right == null)
                 return new Completion("Null Exception", CompletionType.Exception);
@@ -53,7 +53,12 @@ namespace ScratchNet
             }
         }
 
-        public Descriptor Descriptor
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Descriptor Descriptor
         {
             get
             {
@@ -67,7 +72,7 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "AddExpression"; }
         }
@@ -75,6 +80,8 @@ namespace ScratchNet
         {
             get { return false; }
         }
+
+
         bool result;
         bool leftResult;
         int current;

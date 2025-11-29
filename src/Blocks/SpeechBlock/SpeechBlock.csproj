@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B998C9F-BFAC-4575-9452-3966264D4957}</ProjectGuid>
+    <ProjectGuid>{B5C39412-3475-4E9D-B8B8-F919CFBEFB01}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScratchNet</RootNamespace>
@@ -62,7 +62,7 @@
     <Compile Include="SpeekStatement.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
+    <ProjectReference Include="..\..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
     </ProjectReference>

@@ -16,7 +16,7 @@ namespace ScratchNet
             Operator = Operator.Equal;
         }
 
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "boolean"; }
         }
@@ -140,7 +140,12 @@ namespace ScratchNet
             }
         }
 
-        public Descriptor Descriptor
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Descriptor Descriptor
         {
             get
             {
@@ -157,7 +162,7 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "BinaryExpression"; }
         }

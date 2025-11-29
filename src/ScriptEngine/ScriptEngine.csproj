@@ -87,7 +87,6 @@
     <Compile Include="runtime\Identifier.cs" />
     <Compile Include="runtime\flow\IfStatement.cs" />
     <Compile Include="runtime\Literal.cs" />
-    <Compile Include="runtime\logic\NotExpression.cs" />
     <Compile Include="runtime\flow\ReturnStatement.cs" />
     <Compile Include="runtime\exception\TryCatchStatement.cs" />
     <Compile Include="runtime\flow\WhileStatement.cs" />

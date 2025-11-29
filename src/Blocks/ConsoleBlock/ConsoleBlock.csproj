@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64AB2104-7F4D-469C-86FB-1AF4921947C0}</ProjectGuid>
+    <ProjectGuid>{720F1122-C037-4F3C-BC74-AFCA7E527AAE}</ProjectGuid>
     <OutputType>library</OutputType>
     <RootNamespace>ScratchNet</RootNamespace>
     <AssemblyName>Console</AssemblyName>
@@ -95,7 +95,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
+    <ProjectReference Include="..\..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
     </ProjectReference>

@@ -117,10 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CanNotConvertException" xml:space="preserve">
+    <value>无法将{0}转换为{1}</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>集合类型，包括堆栈、队列、列表和字典</value>
   </data>
+  <data name="Description1" xml:space="preserve">
+    <value>数据类型，包括链表和二叉树</value>
+  </data>
+  <data name="ExecutionAborted" xml:space="preserve">
+    <value>运行中断</value>
+  </data>
+  <data name="FailedNewException" xml:space="preserve">
+    <value>无法新建对象</value>
+  </data>
+  <data name="IndexOutOfRangeException" xml:space="preserve">
+    <value>位置超出范围</value>
+  </data>
+  <data name="InvalidBeforeEqual" xml:space="preserve">
+    <value>等号前格式错误，这里只能放置变量</value>
+  </data>
+  <data name="InvalidFormat" xml:space="preserve">
+    <value>'{0}'格式无效</value>
+  </data>
+  <data name="NotArrayException" xml:space="preserve">
+    <value>值不是数组</value>
+  </data>
+  <data name="NotBoolean" xml:space="preserve">
+    <value>值不是布尔值</value>
+  </data>
+  <data name="NotCollectionException" xml:space="preserve">
+    <value>值不是数组、列表或者字典</value>
+  </data>
+  <data name="NotConvertToDoubleException" xml:space="preserve">
+    <value>无法将{0}转换成Double类型</value>
+  </data>
+  <data name="NotConvertToFloatException" xml:space="preserve">
+    <value>无法将{0}转换成float类型</value>
+  </data>
+  <data name="NotConvertToIntegerException" xml:space="preserve">
+    <value>无法将{0}转换成整数类型</value>
+  </data>
+  <data name="NotConvertToLongException" xml:space="preserve">
+    <value>无法将{0}转换成long类型</value>
+  </data>
+  <data name="NotIntegerException" xml:space="preserve">
+    <value>值不是整数</value>
+  </data>
+  <data name="NotNumber" xml:space="preserve">
+    <value>值不是数字</value>
+  </data>
+  <data name="NotNumberException" xml:space="preserve">
+    <value>值不是数字</value>
+  </data>
+  <data name="NotStringException" xml:space="preserve">
+    <value>只不是字符串</value>
+  </data>
+  <data name="NotStringNumberException" xml:space="preserve">
+    <value>值不是字符串或数字</value>
+  </data>
+  <data name="NoValueAssigned" xml:space="preserve">
+    <value>没有提供数值</value>
+  </data>
+  <data name="NullException" xml:space="preserve">
+    <value>位置不能为空</value>
+  </data>
+  <data name="NullException1" xml:space="preserve">
+    <value>位置不能为空</value>
+  </data>
+  <data name="NullException2" xml:space="preserve">
+    <value>值不能为空</value>
+  </data>
+  <data name="OnlyVariableAccept" xml:space="preserve">
+    <value>这里只允许放置变量</value>
+  </data>
+  <data name="ParameterNullException" xml:space="preserve">
+    <value>参数不能为空</value>
+  </data>
+  <data name="StringOnlySupport" xml:space="preserve">
+    <value>字符串只支持+=</value>
+  </data>
+  <data name="TestNullException" xml:space="preserve">
+    <value>判断条件不能为空</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>集合</value>
+  </data>
+  <data name="Title1" xml:space="preserve">
+    <value>数据类型</value>
+  </data>
+  <data name="UnknowException" xml:space="preserve">
+    <value>未知异常</value>
+  </data>
+  <data name="ValueNullException" xml:space="preserve">
+    <value>值不能为空</value>
+  </data>
+  <data name="VariableDefinedExcepiton" xml:space="preserve">
+    <value>变量已经定义过</value>
+  </data>
+  <data name="VariableNameException" xml:space="preserve">
+    <value>变量名不能为空</value>
+  </data>
+  <data name="VariableNotDefined" xml:space="preserve">
+    <value>变量{0}未定义</value>
+  </data>
+  <data name="VariableNullException" xml:space="preserve">
+    <value>变量值不能为空</value>
+  </data>
+  <data name="WrongStringFormat" xml:space="preserve">
+    <value>字符串格式错误</value>
   </data>
 </root>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E2FF20A-0A70-42EB-9D7F-232825741AFF}</ProjectGuid>
+    <ProjectGuid>{58C8EB6B-6F1B-4F32-9CBD-540BE9E46FF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScratchNet</RootNamespace>
@@ -56,7 +56,7 @@
     <Compile Include="WaitStatement.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
+    <ProjectReference Include="..\..\ScriptEngine\ScriptEngine.csproj">
       <Project>{9efe2134-8015-4957-a9e1-f7d2fbb4cda7}</Project>
       <Name>ScriptEngine</Name>
     </ProjectReference>

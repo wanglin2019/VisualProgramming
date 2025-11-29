@@ -171,5 +171,10 @@ namespace ScratchNet
             throw new NotSupportedException(string.Format(Properties.Language.CanNotConvertException, value.GetType(), typeof(T)));
 
         }
+
+        public static Type GetNumberTypes(object returnValue1, object returnValue2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
