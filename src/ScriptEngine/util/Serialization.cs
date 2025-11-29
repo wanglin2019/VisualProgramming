@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media;
 using System.Xml;
 
 namespace ScratchNet
@@ -113,7 +112,7 @@ namespace ScratchNet
             }
             return node;
         }
-        private static XmlNode CreateFunctionNode(Function e, XmlDocument xmlDoc, Nullable<System.Windows.Point> point = null)
+        private static XmlNode CreateFunctionNode(Function e, XmlDocument xmlDoc, Nullable<Position> point = null)
         {
             XmlNode exNode = xmlDoc.CreateElement("Function");
             exNode.Attributes.Append(CreateAttribute(xmlDoc, "type", GetTypeName(e.GetType())));
@@ -173,7 +172,7 @@ namespace ScratchNet
             }
             return exNode;
         }
-        private static XmlNode CreateBlockStatementNode(BlockStatement e, XmlDocument xmlDoc, Nullable<System.Windows.Point> point = null)
+        private static XmlNode CreateBlockStatementNode(BlockStatement e, XmlDocument xmlDoc, Nullable<Position> point = null)
         {
             XmlNode exNode = CreateNode(xmlDoc, "BlockStatement", "type", GetTypeName(e.GetType()));
             if (point != null)
@@ -247,7 +246,7 @@ namespace ScratchNet
 
             return exNode;
         }
-        private static XmlNode CreateExpressionNode(Expression e, XmlDocument xmlDoc, Nullable<System.Windows.Point> point = null)
+        private static XmlNode CreateExpressionNode(Expression e, XmlDocument xmlDoc, Nullable<Position> point = null)
         {
             XmlNode exNode = xmlDoc.CreateElement("Expression");
             if (e != null)
@@ -382,9 +381,9 @@ namespace ScratchNet
                     {
                         Expression exp = LoadExpression(eNode);
                         sp.Expressions.Add(exp);
-                        System.Windows.Point pt = new System.Windows.Point();
+                        Position pt = new Position();
                         if (eNode.Attributes["x"] != null && eNode.Attributes["y"] != null)
-                            pt = new System.Windows.Point(double.Parse(eNode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(eNode.Attributes["x"].Value),
                                 double.Parse(eNode.Attributes["y"].Value));
                         sp.Positions.Add(exp, pt);
                     }
@@ -397,9 +396,9 @@ namespace ScratchNet
                         if (bs.Body.Count <= 0)
                             continue;
                         sp.BlockStatements.Add(bs);
-                        System.Windows.Point pt = new System.Windows.Point();
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new System.Windows.Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(bs, pt);
                     }
@@ -410,9 +409,9 @@ namespace ScratchNet
                     {
                         Function func = LoadFunction(bnode);
                         sp.Handlers.Add(func as ScratchNet.EventHandler);
-                        System.Windows.Point pt = new System.Windows.Point();
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new System.Windows.Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(func, pt);
                     }
@@ -423,9 +422,9 @@ namespace ScratchNet
                     {
                         Function func = LoadFunction(bnode);
                         sp.Functions.Add(func);
-                        System.Windows.Point pt = new System.Windows.Point();
+                        Position pt = new Position();
                         if (bnode.Attributes["x"] != null && bnode.Attributes["y"] != null)
-                            pt = new System.Windows.Point(double.Parse(bnode.Attributes["x"].Value),
+                            pt = new Position(double.Parse(bnode.Attributes["x"].Value),
                                 double.Parse(bnode.Attributes["y"].Value));
                         sp.Positions.Add(func, pt);
                     }
@@ -639,11 +638,11 @@ namespace ScratchNet
                     Type tx = Type.GetType(node.Attributes["value"].Value);
                     property.SetValue(exp, tx);
                 }
-                else if (pType.IsAssignableFrom(typeof(System.Windows.Media.Color)))
-                {
-                    object tx = ColorConverter.ConvertFromString(node.Attributes["value"].Value);
-                    property.SetValue(exp, tx);
-                }
+                //else if (pType.IsAssignableFrom(typeof(System.Windows.Media.Color)))
+                //{
+                //    object tx = ColorConverter.ConvertFromString(node.Attributes["value"].Value);
+                //    property.SetValue(exp, tx);
+                //}
                 else
                 {
                     string value = node.Attributes["value"].Value;

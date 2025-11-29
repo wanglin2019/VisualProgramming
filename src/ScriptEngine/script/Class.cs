@@ -14,6 +14,6 @@ namespace ScratchNet
         List<EventHandler> Handlers { get; }
         List<Expression> Expressions { get; }
         List<BlockStatement> BlockStatements { get; }
-        Dictionary<object, Point> Positions { get; }
+        Dictionary<object, Position> Positions { get; }
     }
 }
