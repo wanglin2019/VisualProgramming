@@ -217,6 +217,10 @@
       <Project>{3e0b8484-226f-4ad0-8023-7d8a0fec8c9d}</Project>
       <Name>DataBlock</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Blocks\FlowBlock\FlowBlock.csproj">
+      <Project>{e842047c-99a3-4159-8306-c08983503626}</Project>
+      <Name>FlowBlock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Blocks\MathBlock\MathBlock.csproj">
       <Project>{3256095c-a9ec-4151-ba37-6f004b7aec87}</Project>
       <Name>MathBlock</Name>
