@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3256095C-A9EC-4151-BA37-6F004B7AEC87}</ProjectGuid>
+    <ProjectGuid>{E842047C-99A3-4159-8306-C08983503626}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScratchNet</RootNamespace>
@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbsExpression.cs" />
-    <Compile Include="EExpression.cs" />
-    <Compile Include="MathFunctionBase.cs" />
-    <Compile Include="MathLibary.cs" />
-    <Compile Include="MaxExpression.cs" />
-    <Compile Include="MinExpression.cs" />
-    <Compile Include="PIExpression.cs" />
+    <Compile Include="BreakStatement.cs" />
+    <Compile Include="ContinueStatement.cs" />
+    <Compile Include="DoStatement.cs" />
+    <Compile Include="ForInStatement.cs" />
+    <Compile Include="ForStatement.cs" />
+    <Compile Include="IfStatement.cs" />
+    <Compile Include="LoopStatement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Language.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -59,9 +59,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Language.zh-CN.resx</DependentUpon>
     </Compile>
-    <Compile Include="RandomExpression.cs" />
-    <Compile Include="SqrtExpression.cs" />
-    <Compile Include="TriangleFunctionExpression.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="ReturnStatement.cs" />
+    <Compile Include="TryCatchStatement.cs" />
+    <Compile Include="WhileStatement.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScriptEngine\ScriptEngine.csproj">
@@ -78,6 +79,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Language.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -56,8 +56,6 @@
     <Compile Include="runtime\AssignmentExpression.cs" />
     <Compile Include="runtime\BooleanExpression.cs" />
     <Compile Include="runtime\comment\CommentStatement.cs" />
-    <Compile Include="runtime\flow\DoStatement.cs" />
-    <Compile Include="runtime\flow\ForStatement.cs" />
     <Compile Include="runtime\function\CallExpression.cs" />
     <Compile Include="runtime\MemberExpression.cs" />
     <Compile Include="runtime\NewExpression.cs" />
@@ -70,7 +68,6 @@
     <Compile Include="execute\ScriptValue.cs" />
     <Compile Include="execute\TypeConverters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="runtime\flow\ContinueStatement.cs" />
     <Compile Include="runtime\event\EventHandlerDelcaration.cs" />
     <Compile Include="runtime\function\FunctionDeclarationEx.cs">
       <SubType>Code</SubType>
@@ -79,17 +76,10 @@
     <Compile Include="script\descriptor\SelectionExpressionItemDescriptor.cs" />
     <Compile Include="script\EventHandler.cs" />
     <Compile Include="runtime\operator\BinaryExpression.cs" />
-    <Compile Include="runtime\flow\BreakStatement.cs" />
     <Compile Include="runtime\operator\ConditionalExpression.cs" />
     <Compile Include="runtime\ExpressionStatement.cs" />
-    <Compile Include="runtime\flow\ForInStatement.cs" />
-    <Compile Include="runtime\flow\LoopStatement.cs" />
     <Compile Include="runtime\Identifier.cs" />
-    <Compile Include="runtime\flow\IfStatement.cs" />
     <Compile Include="runtime\Literal.cs" />
-    <Compile Include="runtime\flow\ReturnStatement.cs" />
-    <Compile Include="runtime\exception\TryCatchStatement.cs" />
-    <Compile Include="runtime\flow\WhileStatement.cs" />
     <Compile Include="script\Declaration.cs" />
     <Compile Include="script\descriptor\BlockDescriptor.cs" />
     <Compile Include="script\descriptor\Descriptor.cs" />
