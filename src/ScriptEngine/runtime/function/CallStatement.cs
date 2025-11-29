@@ -20,7 +20,7 @@ namespace ScratchNet
         }
         public List<Expression> Args { get;set; }
         public List<string> ArgTyps { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number|boolean|string"; }
         }
@@ -72,7 +72,12 @@ namespace ScratchNet
             return Completion.Void;
         }
 
-        public Descriptor Descriptor
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Descriptor Descriptor
         {
             get
             {
@@ -120,16 +125,16 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return ""; }
         }
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }

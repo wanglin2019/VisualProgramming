@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScratchNet
 {
-    public interface Loop : Statement
-    {
-    }
+    //public interface Loop : Statement
+    //{
+    //}
 }

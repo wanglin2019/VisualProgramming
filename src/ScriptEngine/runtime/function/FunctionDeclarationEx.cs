@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public class FunctionDeclaration : Function
+    public class FunctionDeclarationEx : Function
     {
-        public FunctionDeclaration()
+        public FunctionDeclarationEx()
         {
             Params = new List<Parameter>();
             Body = new BlockStatement();

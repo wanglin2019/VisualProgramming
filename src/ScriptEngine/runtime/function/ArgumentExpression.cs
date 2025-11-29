@@ -9,7 +9,7 @@ namespace ScratchNet
     {
         public String Variable { get; set; }
         public string VarType { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return VarType; }
         }
@@ -19,7 +19,12 @@ namespace ScratchNet
             return new Completion(enviroment.GetValue(Variable));
         }
 
-        public Descriptor Descriptor
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Descriptor Descriptor
         {
             get
             {
@@ -29,7 +34,7 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "ArgumentExpression"; }
         }

@@ -12,21 +12,26 @@ namespace ScratchNet
             Params = new List<Parameter>();
             Body = new BlockStatement();
         }
-        public List<Parameter> Params { get; set; }
-        public string Name { get; set; }
-        public BlockStatement Body { get; set; }
+        public override List<Parameter> Params { get; set; }
+        public override string Name { get; set; }
+        public override BlockStatement Body { get; set; }
 
         public Completion Execute(ExecutionEnvironment enviroment)
         {
             throw new NotImplementedException();
         }
 
-        public string ReturnType
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ReturnType
         {
             get { return "number|boolean|string"; }
         }
 
-        public Descriptor Descriptor
+        public override Descriptor Descriptor
         {
             get
             {
@@ -45,13 +50,13 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "FunctionDeclaration"; }
         }
 
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get
             {
@@ -64,5 +69,7 @@ namespace ScratchNet
         {
             get { return false; }
         }
+
+        public override string Format { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

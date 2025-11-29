@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScratchNet
 {
-    public class AssignmentStatement : Statement, Expression
+    public class AssignmentStatement : Statement//, Expression
     {
         public AssignmentStatement()
         {
@@ -13,7 +13,7 @@ namespace ScratchNet
         }
         public Expression Left { get; set; }
         public Expression Right { get; set; }
-        public string ReturnType
+        public override string ReturnType
         {
             get { return "number|string|boolean"; }
         }
@@ -40,7 +40,12 @@ namespace ScratchNet
             
         }
 
-        public Descriptor Descriptor
+        protected override Completion ExecuteImpl(ExecutionEnvironment enviroment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Descriptor Descriptor
         {
             get {
                 Descriptor desc = new Descriptor();
@@ -52,17 +57,17 @@ namespace ScratchNet
             }
         }
 
-        public string Type
+        public override string Type
         {
             get { return "VariableAssignmentExpression"; }
         }
 
-        public BlockDescriptor BlockDescriptor
+        public override BlockDescriptor BlockDescriptor
         {
             get { return null; }
         }
 
-        public bool IsClosing
+        public override bool IsClosing
         {
             get { return false; }
         }
