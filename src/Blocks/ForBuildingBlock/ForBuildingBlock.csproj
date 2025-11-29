@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CanvasBlock\CanvasBlock.csproj" />
+    <ProjectReference Include="..\ConsoleBlock\ConsoleBlock.csproj" />
+    <ProjectReference Include="..\DataBlock\DataBlock.csproj" />
+    <ProjectReference Include="..\FlowBlock\FlowBlock.csproj" />
+    <ProjectReference Include="..\MathBlock\MathBlock.csproj" />
+    <ProjectReference Include="..\SpeechBlock\SpeechBlock.csproj" />
+    <ProjectReference Include="..\ThreadBlock\ThreadBlock.csproj" />
+  </ItemGroup>
+
+</Project>
